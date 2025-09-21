@@ -1,0 +1,104 @@
+.underwater-bg {
+  background: linear-gradient(180deg, 
+    #1e3a8a 0%, 
+    #1e40af 25%, 
+    #1d4ed8 50%, 
+    #1e3a8a 75%, 
+    #0c1b4d 100%
+  );
+  min-height: 100vh;
+}
+
+/* إصلاح RTL للعربية */
+html[lang="ar"], 
+.rtl {
+  direction: rtl;
+}
+
+html[lang="ar"] * {
+  text-align: right;
+  font-family: 'Cairo', 'Segoe UI', 'Tahoma', sans-serif;
+}
+
+/* أنيميشن الفقاعات */
+@keyframes bubbleRise {
+  0% { 
+    transform: translateY(100vh) scale(0); 
+    opacity: 0; 
+  }
+  10% { 
+    opacity: 0.8; 
+  }
+  90% { 
+    opacity: 0.8; 
+  }
+  100% { 
+    transform: translateY(-10vh) scale(1); 
+    opacity: 0; 
+  }
+}
+
+.bubble-animation {
+  animation: bubbleRise linear infinite;
+  pointer-events: none;
+}
+
+/* أنيميشن الموجات */
+@keyframes wave {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-30px); }
+}
+
+.wave-animation {
+  animation: wave ease-in-out infinite;
+}
+
+/* إصلاح مشكلة النماذج */
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+/* منع التمرير العلوي عند الكتابة */
+.prevent-scroll {
+  scroll-behavior: auto !important;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
